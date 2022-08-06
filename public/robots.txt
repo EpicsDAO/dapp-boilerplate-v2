@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dapp-boilerplate-v2.epics.dev/sitemap.xml

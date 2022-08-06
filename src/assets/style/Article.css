@@ -1,0 +1,478 @@
+h1 {
+  font-size: 2.66667rem;
+  margin-top: 40px;
+  color: var(--Epics-title);
+}
+
+h2:not(:nth-child(1)) {
+  margin-top: 80px;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--Epics-title);
+}
+
+h3:not(:nth-child(1)) {
+  margin-top: 64px;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: var(--Epics-title);
+}
+
+h4 {
+  font-size: 1.33333rem;
+  color: var(--Epics-title);
+}
+
+h5 {
+  font-size: 1.14286rem;
+  color: var(--Epics-title);
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--Epics-title);
+}
+
+code {
+  border-radius: 12px;
+}
+
+p code {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--Epics-bg);
+  border: 1px solid var(--Epics-border);
+  color: #a73730;
+  word-wrap: break-word;
+}
+
+blockquote {
+  padding: 16px 32px 16px 16px;
+  margin: 20px 0;
+  background-color: rgba(119, 124, 130, 0.1);
+  border-left: 4px solid rgba(89, 89, 89, 0.2);
+  border-radius: 12px;
+}
+
+blockquote p {
+  color: var(--Epics-title);
+}
+
+p:not(:nth-child(1)) {
+  margin-top: 24px;
+}
+
+p {
+  line-height: 1.8;
+  color: var(--Epics-main);
+}
+
+p img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+ul {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+ul li {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+ol {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+ol li {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+a {
+  word-wrap: break-word;
+}
+
+p {
+  word-wrap: break-word;
+}
+
+pre,
+code,
+kbd,
+samp,
+var {
+  font-family: 'Noto Sans Mono CJK JP', 'Source Han Code JP', 'Ricty',
+    'Ricty Diminished', 'Ricty Diminished Discord', 'Myrica M', 'MyricaM M',
+    'Rounded M+ 1m regular', 'Rounded M+ 2m regular', 'Rounded Mgen+ 1m regular',
+    'Rounded Mgen+ 2m regular', 'Migu 1M', 'Migu 2M', 'VL ゴシック', 'M+ 1m',
+    'M+ 2m', 'Yutapon coding Regular', SFMono-Regular, Consolas, Menlo, Monaco,
+    'Roboto Mono', 'Liberation Mono', 'Courier New', Courier, 'Osaka-mono',
+    'Osaka-等幅', Meiryo, monospace;
+  font-weight: 400;
+}
+
+.rehype-code-title {
+  font-family: 'Noto Sans Mono CJK JP', 'Source Han Code JP', 'Ricty',
+    'Ricty Diminished', 'Ricty Diminished Discord', 'Myrica M', 'MyricaM M',
+    'Rounded M+ 1m regular', 'Rounded M+ 2m regular', 'Rounded Mgen+ 1m regular',
+    'Rounded Mgen+ 2m regular', 'Migu 1M', 'Migu 2M', 'VL ゴシック', 'M+ 1m',
+    'M+ 2m', 'Yutapon coding Regular', SFMono-Regular, Consolas, Menlo, Monaco,
+    'Roboto Mono', 'Liberation Mono', 'Courier New', Courier, 'Osaka-mono',
+    'Osaka-等幅', Meiryo, monospace;
+  max-width: 96%;
+  display: inline-block;
+  position: relative;
+  margin-top: 16px;
+  padding: 4px 16px;
+  background-color: #595959;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 8px 8px 0 0;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.rehype-code-title::-webkit-scrollbar {
+  display: none;
+}
+
+.rehype-code-title + pre {
+  margin-top: -8px;
+  background-color: #0d1117;
+  border-radius: 0 12px 12px 12px;
+}
+
+@media (max-width: 552px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.33333rem;
+  }
+
+  h3 {
+    font-size: 1.14286rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 0.88889rem;
+  }
+
+  h6 {
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 0.88889rem;
+  }
+
+  ul {
+    font-size: 0.88889rem;
+  }
+
+  ol {
+    font-size: 0.88889rem;
+  }
+}
+
+a {
+  color: var(--Epics-link);
+}
+
+a:hover {
+  color: var(--Epics-link-hover);
+}
+
+a:visited {
+  color: var(--Epics-link-visited);
+}
+
+/* table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: table;
+  font-size: 14px;
+  margin: 20px 0;
+  width: 100%;
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-all;
+  overflow-x: scroll;
+}
+
+table thead {
+  border-color: inherit;
+  display: table-header-group;
+  vertical-align: middle;
+}
+
+table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+table th,
+table td {
+  border: 1px solid #dbdbdb;
+  padding: 0.5em 0.75em;
+  vertical-align: top;
+}
+
+table tr {
+  border-color: inherit;
+  display: table-row;
+  vertical-align: inherit;
+}
+
+table tr:nth-child(2n) {
+  background: var(--Epics-bg);
+}
+
+table tr th {
+  font-weight: bold;
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom-width: 0;
+}
+
+table th code,
+table td code {
+  color: #39a845;
+  display: inline-block;
+  font-size: 12px;
+} */
+
+.primary {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(57, 80, 160, 0.1);
+  font-size: 0.88889em;
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.primary p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.primary ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: 'i';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: var(--Epics-link);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.secondary {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(119, 124, 130, 0.1);
+  font-size: 0.88889em;
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.secondary p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.secondary ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: 'i';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: var(--Epics-main);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.success {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(57, 168, 69, 0.1);
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.secondary p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.success ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: 'i';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #39a845;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.info {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(48, 115, 183, 0.1);
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.info p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.info ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: 'i';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: var(--Epics-link-hover);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.warning {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(255, 195, 0, 0.1);
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.warning p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.warning ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '!';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #ffc300;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.error {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(181, 51, 46, 0.1);
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.error p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.error ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '!';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #b5332e;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  border-radius: 24px;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 24px;
+}

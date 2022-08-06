@@ -1,0 +1,11 @@
+{
+  "title": "Home",
+  "description": "Boilerplate for building dApps on Solana chains. It's using Next.js (React) and TypeScript.",
+  "pleaseConnect": "Please connect your Solana wallet 👛",
+  "wallet": "Wallet",
+  "balance": "Balance",
+  "getBalanceError": "Failed to fetch balance. Please try it later",
+  "airdropSuccess": "You've got 1 SOL 💰",
+  "update": "Update",
+  "tryLater": "Something went wrong. Please try it later."
+}

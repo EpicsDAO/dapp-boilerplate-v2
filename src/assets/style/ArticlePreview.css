@@ -1,0 +1,478 @@
+.preview h1 {
+  font-size: 2.66667rem;
+  margin-top: 40px;
+  color: var(--Epics-title);
+}
+
+.preview h2:not(:nth-child(1)) {
+  margin-top: 80px;
+}
+
+.preview h2 {
+  font-size: 2rem;
+  color: var(--Epics-title);
+}
+
+.preview h3:not(:nth-child(1)) {
+  margin-top: 64px;
+}
+
+.preview h3 {
+  font-size: 1.6rem;
+  color: var(--Epics-title);
+}
+
+.preview h4 {
+  font-size: 1.33333rem;
+  color: var(--Epics-title);
+}
+
+.preview h5 {
+  font-size: 1.14286rem;
+  color: var(--Epics-title);
+}
+
+.preview h6 {
+  font-size: 1rem;
+  color: var(--Epics-title);
+}
+
+.preview code {
+  border-radius: 12px;
+}
+
+.preview p code {
+  padding: 2px 4px;
+  border-radius: 8px;
+  background-color: var(--Epics-bg);
+  border: 1px solid var(--Epics-border);
+  color: #a73730;
+  word-wrap: break-word;
+}
+
+.preview blockquote {
+  padding: 16px 32px 16px 16px;
+  margin: 20px 0;
+  background-color: rgba(119, 124, 130, 0.1);
+  border-left: 4px solid rgba(89, 89, 89, 0.2);
+  border-radius: 12px;
+}
+
+.preview blockquote p {
+  color: var(--Epics-title);
+}
+
+.preview p:not(:nth-child(1)) {
+  margin-top: 24px;
+}
+
+.preview p {
+  line-height: 1.8;
+  color: var(--Epics-main);
+}
+
+.preview p img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.preview ul {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.preview ul li {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.preview ol {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.preview ol li {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.preview a {
+  word-wrap: break-word;
+}
+
+.preview p {
+  word-wrap: break-word;
+}
+
+.preview pre,
+.preview code,
+.preview kbd,
+.preview samp,
+.preview var {
+  font-family: 'Noto Sans Mono CJK JP', 'Source Han Code JP', 'Ricty',
+    'Ricty Diminished', 'Ricty Diminished Discord', 'Myrica M', 'MyricaM M',
+    'Rounded M+ 1m regular', 'Rounded M+ 2m regular', 'Rounded Mgen+ 1m regular',
+    'Rounded Mgen+ 2m regular', 'Migu 1M', 'Migu 2M', 'VL ゴシック', 'M+ 1m',
+    'M+ 2m', 'Yutapon coding Regular', SFMono-Regular, Consolas, Menlo, Monaco,
+    'Roboto Mono', 'Liberation Mono', 'Courier New', Courier, 'Osaka-mono',
+    'Osaka-等幅', Meiryo, monospace;
+  font-weight: 400;
+}
+
+.preview .rehype-code-title {
+  font-family: 'Noto Sans Mono CJK JP', 'Source Han Code JP', 'Ricty',
+    'Ricty Diminished', 'Ricty Diminished Discord', 'Myrica M', 'MyricaM M',
+    'Rounded M+ 1m regular', 'Rounded M+ 2m regular', 'Rounded Mgen+ 1m regular',
+    'Rounded Mgen+ 2m regular', 'Migu 1M', 'Migu 2M', 'VL ゴシック', 'M+ 1m',
+    'M+ 2m', 'Yutapon coding Regular', SFMono-Regular, Consolas, Menlo, Monaco,
+    'Roboto Mono', 'Liberation Mono', 'Courier New', Courier, 'Osaka-mono',
+    'Osaka-等幅', Meiryo, monospace;
+  max-width: 96%;
+  display: inline-block;
+  position: relative;
+  margin-top: 16px;
+  padding: 4px 16px;
+  background-color: #595959;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 8px 8px 0 0;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.preview .rehype-code-title::-webkit-scrollbar {
+  display: none;
+}
+
+.preview .rehype-code-title + pre {
+  margin-top: -8px;
+  background-color: #0d1117;
+  border-radius: 0 12px 12px 12px;
+}
+
+@media (max-width: 552px) {
+  .preview h1 {
+    font-size: 1.6rem;
+  }
+  .preview h2 {
+    font-size: 1.33333rem;
+  }
+
+  .preview h3 {
+    font-size: 1.14286rem;
+  }
+
+  .preview h4 {
+    font-size: 1rem;
+  }
+
+  .preview h5 {
+    font-size: 0.88889rem;
+  }
+
+  .preview h6 {
+    font-size: 0.8rem;
+  }
+
+  .preview p {
+    font-size: 0.88889rem;
+  }
+
+  .preview ul {
+    font-size: 0.88889rem;
+  }
+
+  .preview ol {
+    font-size: 0.88889rem;
+  }
+}
+
+.preview a {
+  color: var(--Epics-link);
+}
+
+.preview a:hover {
+  color: var(--Epics-link-hover);
+}
+
+.preview a:visited {
+  color: var(--Epics-link-visited);
+}
+
+.preview table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: table;
+  font-size: 14px;
+  margin: 20px 0;
+  width: 100%;
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-all;
+  overflow-x: scroll;
+}
+
+.preview table thead {
+  border-color: inherit;
+  display: table-header-group;
+  vertical-align: middle;
+}
+
+.preview table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+
+.preview table th,
+.preview table td {
+  border: 1px solid #dbdbdb;
+  padding: 0.5em 0.75em;
+  vertical-align: top;
+}
+
+.preview table tr {
+  border-color: inherit;
+  display: table-row;
+  vertical-align: inherit;
+}
+
+.preview table tr:nth-child(2n) {
+  background: var(--Epics-bg);
+}
+
+.preview table tr th {
+  font-weight: bold;
+}
+
+.preview .table tbody tr:last-child th,
+.preview .table tbody tr:last-child td {
+  border-bottom-width: 0;
+}
+
+.preview table th code,
+.preview table td code {
+  color: #39a845;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.preview .primary {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(57, 80, 160, 0.1);
+  font-size: 0.88889em;
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .primary p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .primary ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: 'i';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: var(--Epics-link);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.preview .secondary {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(119, 124, 130, 0.1);
+  font-size: 0.88889em;
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .secondary p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .secondary ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: 'i';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: var(--Epics-main);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.preview .success {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(57, 168, 69, 0.1);
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .secondary p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .success ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: 'i';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #39a845;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.preview .info {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(48, 115, 183, 0.1);
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .info p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .info ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: 'i';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: var(--Epics-link-hover);
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.preview .warning {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(255, 195, 0, 0.1);
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .warning p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .warning ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '!';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #ffc300;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.preview .error {
+  border-radius: 12px;
+  position: relative;
+  margin: 1rem 0rem 2rem 0rem;
+  padding: 4px 16px 4px 48px;
+  background: rgba(181, 51, 46, 0.1);
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .error p {
+  color: var(--Epics-title);
+  font-size: 0.88889em;
+}
+
+.preview .error ::before {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '!';
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #b5332e;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.preview .video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  border-radius: 24px;
+}
+
+.preview .video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 24px;
+}

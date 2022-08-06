@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "epics-dao"
+  },
+  "targets": {
+    "epics-dao": {
+      "hosting": {
+        "dapp-boilerplate-v2": [
+          "dapp-boilerplate-v2"
+        ]
+      }
+    }
+  }
+}
