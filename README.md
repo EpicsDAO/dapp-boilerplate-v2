@@ -15,9 +15,9 @@ Powered by Solana.
 
 ## Summary
 
-- [x] [Next.js (v12.1) - SSG Framework](https://nextjs.org/)
+- [x] [Next.js (v12) - SSG Framework](https://nextjs.org/)
 - [x] [React (v18) - UI Framework](https://reactjs.org/)
-- [x] [TypeScript (v4.6) - Type check](https://www.typescriptlang.org/)
+- [x] [TypeScript (v4.7) - Type check](https://www.typescriptlang.org/)
 - [x] [ESLint - Linter](https://eslint.org/)
 - [x] [Prettier - Formatter](https://prettier.io/)
 - [x] [Husky - Pre commit](https://typicode.github.io/husky/#/)
