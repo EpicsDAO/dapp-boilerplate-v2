@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "dapps-boilerplate-v2",
+    "target": "dapp-boilerplate-v2",
     "public": "out",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
   }
