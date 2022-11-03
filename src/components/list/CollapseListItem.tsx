@@ -54,7 +54,7 @@ export default function CollapseListItem({ label, activePath, list }: Props) {
         <List component="div" disablePadding>
           {list.map((item) => (
             <ListItem
-              key={item.path}
+              key={`CollapseListItem${item.path}`}
               button
               onClick={() => {
                 routerPush(item.path)

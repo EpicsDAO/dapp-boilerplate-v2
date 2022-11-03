@@ -9,6 +9,7 @@ import {
   Link,
   useMediaQuery,
   Divider,
+  Button,
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -27,12 +28,17 @@ import LinkComponent from '@/components/routing/Link'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import logoSquare from '@/assets/img/logo/Epics-logo.svg'
 import logoSquareWhite from '@/assets/img/logo/Epics-logo-white.svg'
+import { epicsWhitePaperURL } from '@/constants/links'
+import commonFooterNavs from '@/constants/navs/commonFooterNavs'
+import useI18nRouter from '@/hooks/useI18nRouter'
 
 export default function CommonFooter() {
   const colorMode = useRecoilValue(colorModeState)
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const isJapanese = useMemo(() => i18n.language === 'ja', [i18n])
   const theme = useTheme()
-  const xsDisplay = useMediaQuery(theme.breakpoints.down('sm'))
+  const lgDownDisplay = useMediaQuery(theme.breakpoints.down('lg'))
+  const { router, routerPush } = useI18nRouter()
 
   const scrollToTop = useCallback(() => {
     window.scrollTo({
@@ -47,7 +53,7 @@ export default function CommonFooter() {
       <Container maxWidth="xl">
         <Divider />
         <Box py={4} />
-        {xsDisplay && (
+        {lgDownDisplay && (
           <>
             <Box>
               <Box pt={6} pb={4}>
@@ -89,7 +95,81 @@ export default function CommonFooter() {
                   <div style={{ flexGrow: 1 }} />
                 </Toolbar>
               </Box>
-
+              <Box pb={4}>
+                {commonFooterNavs.map((item) => (
+                  <Box
+                    key={`CommonFooterCommonFooterNavsMobile${item.path}`}
+                    py={2}
+                    textAlign="center"
+                  >
+                    <Button
+                      onClick={() => {
+                        routerPush(item.path)
+                      }}
+                      color={
+                        item.path === '/'
+                          ? router.asPath === `/${i18n.language}/`
+                            ? 'primary'
+                            : 'inherit'
+                          : router.asPath.includes(item.path)
+                          ? 'primary'
+                          : 'inherit'
+                      }
+                    >
+                      {t(`common:navs.${item.label}`)}
+                    </Button>
+                  </Box>
+                ))}
+                <Box py={2} textAlign="center">
+                  <Button
+                    href={'https://epics.dev'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color="secondary"
+                    sx={{
+                      color: `${theme.palette.secondary.main} !important`,
+                    }}
+                  >
+                    {t('common:navs.daoWebsite')}
+                  </Button>
+                </Box>
+              </Box>
+              <Box py={2} textAlign="center">
+                <Link
+                  href={
+                    isJapanese
+                      ? 'https://forms.gle/7Kq2ATANgmNZR4ct9'
+                      : 'https://forms.gle/Ng6gy1vjjHWQRVt99'
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="hover"
+                  variant="body2"
+                  sx={{
+                    cursor: 'pointer',
+                    color: `${theme.palette.secondary.main} !important`,
+                  }}
+                >
+                  {t('common:navs.contact')}
+                </Link>
+              </Box>
+              <Box py={2} textAlign="center">
+                <Link
+                  href={
+                    isJapanese ? epicsWhitePaperURL.ja : epicsWhitePaperURL.en
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="hover"
+                  variant="body2"
+                  sx={{
+                    cursor: 'pointer',
+                    color: `${theme.palette.secondary.main} !important`,
+                  }}
+                >
+                  {t('common:whitepaper')}
+                </Link>
+              </Box>
               <Box py={2} textAlign="center">
                 <LinkComponent href="/legal/privacy-policy">
                   <Link
@@ -192,7 +272,7 @@ export default function CommonFooter() {
             </Box>
           </>
         )}
-        {!xsDisplay && (
+        {!lgDownDisplay && (
           <>
             <Box pt={6} pb={4}>
               <Toolbar>
@@ -210,6 +290,65 @@ export default function CommonFooter() {
                       effect="opacity"
                     />
                   </LinkComponent>
+                </Box>
+                <Box>
+                  <Toolbar>
+                    {commonFooterNavs.slice(0, 5).map((item, index) => (
+                      <Button
+                        key={`CommonFooterCommonFooterNavsDesktop1${item.path}`}
+                        onClick={() => {
+                          routerPush(item.path)
+                        }}
+                        color={
+                          item.path === '/'
+                            ? router.asPath === `/${i18n.language}/`
+                              ? 'primary'
+                              : 'inherit'
+                            : router.asPath.includes(item.path)
+                            ? 'primary'
+                            : 'inherit'
+                        }
+                        sx={{ ml: index === 0 ? 6 : 5 }}
+                      >
+                        {t(`common:navs.${item.label}`)}
+                      </Button>
+                    ))}
+                    <Button
+                      href={'https://epics.dev'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      color="secondary"
+                      sx={{
+                        ml: 6,
+                        color: `${theme.palette.secondary.main} !important`,
+                      }}
+                    >
+                      {t('common:navs.daoWebsite')}
+                    </Button>
+                  </Toolbar>
+                  {/* <Toolbar>
+                    {commonFooterNavs.slice(5, 8).map((item, index) => (
+                      <Button
+                        key={`CommonFooterCommonFooterNavsDesktop2${item.path}`}
+                        onClick={() => {
+                          routerPush(item.path)
+                        }}
+                        color={
+                          item.path === '/'
+                            ? router.asPath === `/${i18n.language}/`
+                              ? 'primary'
+                              : 'inherit'
+                            : router.asPath.includes(item.path)
+                            ? 'primary'
+                            : 'inherit'
+                        }
+                        sx={{ ml: index === 0 ? 6 : 5 }}
+                      >
+                        {t(`common:navs.${item.label}`)}
+                      </Button>
+                    ))}
+                   
+                  </Toolbar> */}
                 </Box>
                 <div style={{ flexGrow: 1 }} />
                 <Box>
@@ -301,7 +440,42 @@ export default function CommonFooter() {
               </Box>
 
               <div style={{ flexGrow: 1 }} />
-
+              <Box mr={2}>
+                <Link
+                  href={
+                    isJapanese
+                      ? 'https://forms.gle/7Kq2ATANgmNZR4ct9'
+                      : 'https://forms.gle/Ng6gy1vjjHWQRVt99'
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="hover"
+                  variant="body2"
+                  sx={{
+                    cursor: 'pointer',
+                    color: `${theme.palette.secondary.main} !important`,
+                  }}
+                >
+                  {t('common:navs.contact')}
+                </Link>
+              </Box>
+              <Box mr={2}>
+                <Link
+                  href={
+                    isJapanese ? epicsWhitePaperURL.ja : epicsWhitePaperURL.en
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="hover"
+                  variant="body2"
+                  sx={{
+                    cursor: 'pointer',
+                    color: `${theme.palette.secondary.main} !important`,
+                  }}
+                >
+                  {t('common:whitepaper')}
+                </Link>
+              </Box>
               <Box>
                 <LinkComponent href="/legal/privacy-policy">
                   <Link

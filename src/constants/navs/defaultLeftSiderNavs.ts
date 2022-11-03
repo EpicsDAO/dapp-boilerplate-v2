@@ -1,9 +1,7 @@
 const defaultLeftSiderNavs = [
   {
-    icon: 'home',
-    label: 'navs.home',
+    label: 'home',
     path: '/',
-    activePath: '/',
   },
 ]
 

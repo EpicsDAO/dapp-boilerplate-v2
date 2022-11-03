@@ -28,7 +28,10 @@
   "retry": "Retry",
   "yourSolanaWalletAddress": "Your Solana wallet address",
   "copied": "Copied to clipboard 🎉",
+  "whitepaper": "White Paper",
   "navs": {
-    "home": "Home"
+    "home": "Home",
+    "contact": "Contact",
+    "daoWebsite": "Epics DAO Website"
   }
 }

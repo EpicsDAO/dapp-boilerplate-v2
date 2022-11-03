@@ -2,10 +2,13 @@ import type { ReactNode } from 'react'
 import { useState, useEffect, useCallback } from 'react'
 import DefaultHeader from './DefaultHeader'
 import DefaultLeftSider from './DefaultLeftSider'
+import CommonFooter from '../CommonFooter'
 import { Box, Drawer, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { useRouter } from 'next/router'
-import CommonFooter from '../CommonFooter'
+
+const drawerWidth = 272
+const headerHeight = 104
 
 type Props = {
   children: ReactNode
@@ -13,72 +16,67 @@ type Props = {
 
 export default function DefaultLayout({ children }: Props) {
   const resetWindowScrollPosition = useCallback(() => window.scrollTo(0, 0), [])
-  const [mobileMenuVisible, setMobileMenuVisible] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const theme = useTheme()
   const mdDownDisplay = useMediaQuery(theme.breakpoints.down('md'))
+
   const router = useRouter()
 
   useEffect(() => {
-    setMobileMenuVisible(false)
+    setMenuOpen(false)
     const pageComponent = document.getElementById('page-component')
-    console.log(pageComponent)
     if (pageComponent != null && !router.asPath.includes('#')) {
       resetWindowScrollPosition()
-      pageComponent.scrollTop = 0
     }
   }, [router.asPath, resetWindowScrollPosition])
 
   return (
     <>
+      <header>
+        <DefaultHeader
+          setMenuOpen={setMenuOpen}
+          drawerWidth={drawerWidth}
+          headerHeight={headerHeight}
+        />
+      </header>
       <nav>
         {mdDownDisplay && (
           <Drawer
             variant="temporary"
-            open={mobileMenuVisible}
-            onClose={() => setMobileMenuVisible(false)}
+            open={menuOpen}
+            onClose={() => setMenuOpen(false)}
             ModalProps={{
               keepMounted: true,
             }}
           >
-            <Box width="272px" height="100vh">
-              <DefaultLeftSider />
+            <Box width={`${drawerWidth}px`}>
+              <DefaultLeftSider headerHeight={headerHeight} />
             </Box>
           </Drawer>
         )}
         {!mdDownDisplay && (
           <Drawer
             variant="permanent"
-            PaperProps={{ sx: { border: 'none', zIndex: 1 } }}
+            open={menuOpen}
+            onClose={() => setMenuOpen(false)}
+            sx={{ border: 'none !important' }}
+            PaperProps={{ sx: { border: 'none !important' } }}
           >
-            <Box
-              width="272px"
-              height="100vh - 64px"
-              sx={{
-                position: 'sticky',
-                top: 0,
-              }}
-            >
-              <DefaultLeftSider />
+            <Box width={`${drawerWidth}px`}>
+              <DefaultLeftSider headerHeight={headerHeight} />
             </Box>
           </Drawer>
         )}
       </nav>
-
       <main
-        style={{
-          marginLeft: mdDownDisplay ? '0px' : '272px',
-          width: mdDownDisplay ? '100%' : 'calc(100% - 272px)',
-          height: '100vh',
-          overflowY: 'auto',
-        }}
         id="page-component"
+        style={{
+          minHeight: 'calc(100vh - 208px)',
+          width: mdDownDisplay ? '100%' : `calc(100% - ${drawerWidth}px)`,
+          marginLeft: mdDownDisplay ? 0 : `${drawerWidth}px`,
+        }}
       >
-        <header>
-          <DefaultHeader setMobileMenuVisible={setMobileMenuVisible} />
-        </header>
-        <Box sx={{ minHeight: '80vh' }} pb={6}>
-          {children}
-        </Box>
+        {children}
         <footer>
           <CommonFooter />
         </footer>

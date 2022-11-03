@@ -24,7 +24,9 @@ export default function Home() {
   const { t } = useTranslation()
   return (
     <>
-      <SolanaWalletRow />
+      <div style={{ minHeight: '60vh' }}>
+        <SolanaWalletRow />
+      </div>
     </>
   )
 }
