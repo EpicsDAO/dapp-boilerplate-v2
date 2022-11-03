@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   trailingSlash: true,
+  swcMinify: true,
   reactStrictMode: true,
   webpack: function (config) {
     config.module.rules.push({
@@ -22,10 +23,26 @@ const nextConfig = {
       'Solana チェーン上にdAppを構築するためのボイラープレートです。Next.js(React)とTypeScriptを使用しています。',
     descriptionEN:
       "Boilerplate for building dApps on Solana chains. It's using Next.js (React) and TypeScript.",
-    twitterAccount: '@EpicsDAO',
+    twitterAccount: '@EpicsDAO2',
     instagramAccount: 'epics.dao',
     githubAccount: 'EpicsDAO',
     discordInvitationLink: 'https://discord.gg/GmHYfyRamx',
+  },
+  compiler: {
+    emotion: true,
+    removeConsole: {
+      exclude: ['error'],
+    },
+  },
+  experimental: {
+    modularizeImports: {
+      '@mui/material': {
+        transform: '@mui/material/{{member}}',
+      },
+      '@mui/icons-material': {
+        transform: '@mui/icons-material/{{member}}',
+      },
+    },
   },
 }
 
