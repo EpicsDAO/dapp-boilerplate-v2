@@ -14,6 +14,7 @@ import { SnackbarProvider } from 'notistack'
 import NextNprogress from 'nextjs-progressbar'
 import SolanaWalletProvider from '@/components/wallet/SolanaWalletProvider'
 import AgreeToPolicy from '@/components/notifier/AgreeToPolicy'
+import { NoSsr } from '@mui/material'
 
 export default function Layout({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
@@ -23,31 +24,33 @@ export default function Layout({ Component, pageProps }: AppPropsWithLayout) {
   const theme = makeTheme(isEnglish, colorMode)
   return (
     <>
-      <LocalizationProvider
-        dateAdapter={AdapterDateFns}
-        adapterLocale={isEnglish ? dateEn : dateJa}
-      >
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <SnackbarProvider
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'right',
-            }}
-          >
-            <SolanaWalletProvider>
-              <NextNprogress
-                color={theme.palette.secondary.main}
-                startPosition={0.3}
-                stopDelayMs={200}
-                height={1}
-              />
-              {getLayout(<Component {...pageProps} />)}
-            </SolanaWalletProvider>
-          </SnackbarProvider>
-          <AgreeToPolicy />
-        </ThemeProvider>
-      </LocalizationProvider>
+      <NoSsr>
+        <LocalizationProvider
+          dateAdapter={AdapterDateFns}
+          adapterLocale={isEnglish ? dateEn : dateJa}
+        >
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <SnackbarProvider
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'right',
+              }}
+            >
+              <SolanaWalletProvider>
+                <NextNprogress
+                  color={theme.palette.secondary.main}
+                  startPosition={0.3}
+                  stopDelayMs={200}
+                  height={1}
+                />
+                {getLayout(<Component {...pageProps} />)}
+              </SolanaWalletProvider>
+            </SnackbarProvider>
+            <AgreeToPolicy />
+          </ThemeProvider>
+        </LocalizationProvider>
+      </NoSsr>
     </>
   )
 }

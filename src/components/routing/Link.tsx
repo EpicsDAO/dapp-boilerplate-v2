@@ -26,7 +26,7 @@ export default function LinkComponent({
   return (
     <>
       <Link href={href}>
-        <a {...rest}>{children}</a>
+        <span {...rest}>{children}</span>
       </Link>
     </>
   )
