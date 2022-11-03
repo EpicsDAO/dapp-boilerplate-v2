@@ -50,8 +50,8 @@ export default function SolanaWalletRow() {
     setAirdropLoading(true)
     try {
       await connection.requestAirdrop(publicKey!, 1e9)
-      enqueueSnackbar(`${t('home:airdropSuccess')}`, { variant: 'success' })
       await new Promise((resolve) => setTimeout(resolve, 1000))
+      enqueueSnackbar(`${t('home:airdropSuccess')}`, { variant: 'success' })
     } catch {
       enqueueSnackbar(`${t('home:tryLater')}`, { variant: 'error' })
     } finally {
