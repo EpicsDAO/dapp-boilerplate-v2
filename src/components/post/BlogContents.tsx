@@ -19,7 +19,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { markdownToTxt } from 'markdown-to-txt'
 
 import useDialog from '@/hooks/useDialog'
-import Seo from '@/components/theme/Seo'
 import ScrollSyncToc from '@/components/post/ScrollSyncToc'
 import { useTranslation } from 'next-i18next'
 
@@ -45,12 +44,6 @@ export default function BlogContents({ post, postHtml }: Props) {
 
   return (
     <>
-      <Seo
-        pathname={router.asPath}
-        title={post.title}
-        description={`${markdownToTxt(post.content).slice(0, 120)} ...`}
-        img={post.thumbnail}
-      />
       <Container maxWidth="lg">
         <Box pt={4} pb={16}>
           <Chip label={post.category} color="secondary" />

@@ -14,7 +14,6 @@ import { useRouter } from 'next/router'
 import 'highlight.js/styles/github-dark.css'
 
 import useDialog from '@/hooks/useDialog'
-import Seo from '@/components/theme/Seo'
 import ScrollSyncToc from '@/components/post/ScrollSyncToc'
 import { useTranslation } from 'next-i18next'
 
@@ -37,11 +36,6 @@ export default function Contents({ post, postHtml }: Props) {
 
   return (
     <>
-      <Seo
-        pathname={router.asPath}
-        title={post.title}
-        description={post.description}
-      />
       <Container maxWidth="lg">
         <Box pb={8}>
           <h1>{post.title}</h1>

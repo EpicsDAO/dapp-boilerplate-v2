@@ -24,15 +24,20 @@ export default class MyDocument extends Document {
             property="og:locale"
             content={locale === 'ja' ? 'ja_JP' : 'en_US'}
           />
-          <meta property="twitter:card" content="summary_large_image" />
+          <meta name="twitter:card" content="summary_large_image" />
 
-          <meta
-            property="twitter:creator"
-            content={process.env.twitterAccount}
-          />
+          <meta name="twitter:creator" content={process.env.twitterAccount} />
           <meta
             httpEquiv="Content-Security-Policy"
             content="upgrade-insecure-requests"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&display=swap"
+            rel="stylesheet"
           />
         </Head>
         <body>

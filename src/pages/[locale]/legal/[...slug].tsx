@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 
   const post = getPostBySlug(
     typeof params.slug == 'string' ? [params.slug] : params.slug,
-    ['title', 'description', 'content'],
+    ['title', 'description', 'content', 'id'],
     postDirPrefix,
     (params.locale as string) ?? 'en'
   )
@@ -91,11 +91,24 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     .use(rehypeStringify)
     .process(post.content as string)
 
+  const seo = {
+    pathname: `/legal/${post.id}`,
+    title: {
+      ja: post.title as string,
+      en: post.title as string,
+    },
+    description: {
+      ja: post.description as string,
+      en: post.description as string,
+    },
+    img: null,
+  }
+
   return {
     props: {
       post,
       postHtml: postHtml.value,
-      ...(await getI18nProps(ctx, ['common'])),
+      ...(await getI18nProps(ctx, ['common'], seo)),
     },
   }
 }

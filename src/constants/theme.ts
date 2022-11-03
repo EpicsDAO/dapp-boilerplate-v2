@@ -107,6 +107,8 @@ export const makeTheme = (isEnglish: boolean, mode: 'light' | 'dark') =>
       },
       typography: {
         fontFamily: `
+          Outfit, 
+          'Noto Sans JP',
           -apple-system,
           BlinkMacSystemFont,
           "Hiragino Sans" ,
@@ -123,9 +125,9 @@ export const makeTheme = (isEnglish: boolean, mode: 'light' | 'dark') =>
           "Noto Color Emoji",
           "Segoe UI Emoji",
           "Segoe UI Symbol";`,
-        fontWeightLight: 400,
-        fontWeightRegular: 500,
-        fontWeightMedium: 500,
+        fontWeightLight: 300,
+        fontWeightRegular: 400,
+        fontWeightMedium: 600,
         fontWeightBold: 700,
         h1: {
           fontWeight: 700,
@@ -164,25 +166,25 @@ export const makeTheme = (isEnglish: boolean, mode: 'light' | 'dark') =>
           lineHeight: 1.6,
         },
         subtitle1: {
-          fontWeight: 500,
+          fontWeight: 600,
           fontSize: '1.33333rem',
           letterSpacing: 'normal',
           lineHeight: 1.33333,
         },
         subtitle2: {
-          fontWeight: 500,
+          fontWeight: 400,
           fontSize: '1.14286rem',
           letterSpacing: 'normal',
           lineHeight: 1.6,
         },
         body1: {
-          fontWeight: 500,
+          fontWeight: 400,
           fontSize: '1rem',
           letterSpacing: 'normal',
           lineHeight: 1.6,
         },
         body2: {
-          fontWeight: 500,
+          fontWeight: 400,
           fontSize: '0.88889rem',
           letterSpacing: 'normal',
           lineHeight: 1.75,
@@ -195,13 +197,13 @@ export const makeTheme = (isEnglish: boolean, mode: 'light' | 'dark') =>
           lineHeight: 1.75,
         },
         caption: {
-          fontWeight: 400,
+          fontWeight: 300,
           fontSize: '0.8rem',
           letterSpacing: 'normal',
           lineHeight: 1.14286,
         },
         overline: {
-          fontWeight: 500,
+          fontWeight: 400,
           fontSize: '0.8rem',
           textTransform: 'none',
           letterSpacing: 'normal',

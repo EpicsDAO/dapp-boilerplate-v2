@@ -12,7 +12,6 @@ import { useTheme } from '@mui/material/styles'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useRecoilValue } from 'recoil'
 import { colorModeState } from '@/store/colorMode'
-import Seo from '@/components/theme/Seo'
 import { useTranslation } from 'next-i18next'
 import useI18nRouter from '@/hooks/useI18nRouter'
 
@@ -42,11 +41,6 @@ export default function BlogIndex({ posts, urls }: Props) {
 
   return (
     <>
-      <Seo
-        pathname="/blog"
-        title={t('blog:title')}
-        description={t('blog:description')}
-      />
       <Container maxWidth="xl">
         <Box pt={4} pb={16}>
           <Toolbar disableGutters>
