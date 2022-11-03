@@ -10,9 +10,8 @@ import {
   Skeleton,
 } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
-import { useWallet } from '@solana/wallet-adapter-react'
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import { walletState } from '@/store/wallet'
 import { useRecoilValue } from 'recoil'
 import { useSnackbar } from 'notistack'
 import { useTranslation } from 'next-i18next'
@@ -29,7 +28,7 @@ export default function SolanaWalletRow() {
   const xsDisplay = useMediaQuery(theme.breakpoints.down('sm'))
   const colorMode = useRecoilValue(colorModeState)
   const { enqueueSnackbar } = useSnackbar()
-  const { network, connection } = useRecoilValue(walletState)
+  const { connection } = useConnection()
   const [balance, setBalance] = useState(0)
   const [airdropLoading, setAirdropLoading] = useState(false)
   const [balanceLoading, setBalanceLoading] = useState(false)
@@ -123,7 +122,7 @@ export default function SolanaWalletRow() {
                 <Toolbar variant="dense">
                   <div style={{ flexGrow: 1 }} />
                   <Typography variant="caption">
-                    {t('home:balance')} ({network})
+                    {t('home:balance')} (devnet)
                   </Typography>
 
                   <Tooltip title={t('home:update') || false} placement="top">

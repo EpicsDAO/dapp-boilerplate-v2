@@ -16,7 +16,6 @@ import { useTheme } from '@mui/material/styles'
 import { useRouter } from 'next/router'
 import 'highlight.js/styles/github-dark.css'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { markdownToTxt } from 'markdown-to-txt'
 
 import useDialog from '@/hooks/useDialog'
 import ScrollSyncToc from '@/components/post/ScrollSyncToc'

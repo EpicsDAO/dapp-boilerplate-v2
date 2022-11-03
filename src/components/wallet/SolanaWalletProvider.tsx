@@ -15,15 +15,16 @@ import {
 } from '@solana/wallet-adapter-wallets'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import { useSnackbar } from 'notistack'
-import { useRecoilValue } from 'recoil'
-import { walletState } from '@/store/wallet'
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
+import { clusterApiUrl } from '@solana/web3.js'
 
 type Props = {
   children: ReactNode
 }
 
 export default function SolanaWalletProvider({ children }: Props) {
-  const { network, endpoint } = useRecoilValue(walletState)
+  const network = WalletAdapterNetwork.Devnet
+  const endpoint = useMemo(() => clusterApiUrl(network), [network])
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
