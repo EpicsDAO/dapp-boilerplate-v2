@@ -12,6 +12,7 @@ import {
   SolflareWalletAdapter,
   TorusWalletAdapter,
   BraveWalletAdapter,
+  BackpackWalletAdapter,
 } from '@solana/wallet-adapter-wallets'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
 import { useSnackbar } from 'notistack'
@@ -28,6 +29,7 @@ export default function SolanaWalletProvider({ children }: Props) {
   const wallets = useMemo(
     () => [
       new PhantomWalletAdapter(),
+      new BackpackWalletAdapter(),
       new GlowWalletAdapter(),
       new SlopeWalletAdapter(),
       new SolflareWalletAdapter({ network }),
