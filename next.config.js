@@ -30,9 +30,12 @@ const nextConfig = {
   },
   compiler: {
     emotion: true,
-    removeConsole: {
-      exclude: ['error'],
-    },
+    removeConsole:
+      process.env.NODE_ENV === 'development'
+        ? undefined
+        : {
+            exclude: ['error'],
+          },
   },
   experimental: {
     modularizeImports: {
